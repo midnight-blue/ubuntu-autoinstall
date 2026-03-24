@@ -27,10 +27,10 @@ autoinstall:
   apt:
     mirror: http://archive.ubuntu.com/ubuntu
 
-  snaps:
-    - name: pycharm-community
-      channel: stable 
-      classic: true
+  #snaps:
+  #  - name: pycharm-community
+  #    channel: stable 
+  #    classic: true
 
   shutdown: reboot
 
