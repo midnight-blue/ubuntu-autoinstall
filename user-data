@@ -30,6 +30,9 @@ autoinstall:
     - git
     - python3-pip
 
+  apt:
+    mirror: http://archive.ubuntu.com/ubuntu
+    
   snaps:
     - name: pycharm-community
       channel: stable 
