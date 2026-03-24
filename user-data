@@ -1,3 +1,4 @@
+#cloud-config
 autoinstall:
   version: 1
 
@@ -35,6 +36,7 @@ autoinstall:
       classic: true
 
   shutdown: reboot
+
   storage:
     config:
       - id: disk-vda
@@ -42,7 +44,7 @@ autoinstall:
         ptable: gpt
         path: /dev/vda
         wipe: superblock-recursive
-  
+
       - id: efipart
         type: partition
         device: disk-vda
@@ -50,27 +52,27 @@ autoinstall:
         size: 600M
         flag: boot
         grub_device: true
-  
+
       - id: rootpart
         type: partition
         device: disk-vda
         size: -1
-  
+
       - id: efipart_fs
         type: format
         volume: efipart
         fstype: fat32
-  
+
       - id: rootpart_fs
         type: format
         volume: rootpart
         fstype: ext4
-  
+
       - id: efipart-mount
         type: mount
         device: efipart_fs
         path: /boot/efi
-  
+
       - id: rootpart-mount
         type: mount
         device: rootpart_fs
