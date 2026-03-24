@@ -1,0 +1,77 @@
+autoinstall:
+  version: 1
+
+  source:
+    id: ubuntu-server-minimal
+
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+  timezone: Europe/Rome
+
+  network:
+    version: 2
+    ethernets:
+      enp1s0:
+        dhcp4: true
+
+  identity:
+    username: egidio
+    hostname: linuxconfig
+    password: '$6$mzOdSSVUfhWRNhcX$mkm.drDfOLfpZRX/58ouJqMvitV2O0147VgKzKGYE6Qx4adJ8TXqMHs2dh2L7kT4TW5e97FCRDkGK1J.LouyV.'
+
+  ssh:
+    install-server: true
+    allow-pw: true
+    authorized-keys: []
+
+  packages:
+    - git
+    - python3-pip
+
+  snaps:
+    - name: pycharm-community
+      channel: stable 
+      classic: true
+
+  shutdown: reboot
+  storage:
+    config:
+      - id: disk-vda
+        type: disk
+        ptable: gpt
+        path: /dev/vda
+        wipe: superblock-recursive
+  
+      - id: efipart
+        type: partition
+        device: disk-vda
+        offset: 1048576
+        size: 600M
+        flag: boot
+        grub_device: true
+  
+      - id: rootpart
+        type: partition
+        device: disk-vda
+        size: -1
+  
+      - id: efipart_fs
+        type: format
+        volume: efipart
+        fstype: fat32
+  
+      - id: rootpart_fs
+        type: format
+        volume: rootpart
+        fstype: ext4
+  
+      - id: efipart-mount
+        type: mount
+        device: efipart_fs
+        path: /boot/efi
+  
+      - id: rootpart-mount
+        type: mount
+        device: rootpart_fs
+        path: /
