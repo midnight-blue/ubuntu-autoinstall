@@ -10,12 +10,6 @@ autoinstall:
     layout: us
   timezone: Europe/Rome
 
-  network:
-    version: 2
-    ethernets:
-      enp1s0:
-        dhcp4: true
-
   identity:
     username: egidio
     hostname: linuxconfig
@@ -32,7 +26,7 @@ autoinstall:
 
   apt:
     mirror: http://archive.ubuntu.com/ubuntu
-    
+
   snaps:
     - name: pycharm-community
       channel: stable 
