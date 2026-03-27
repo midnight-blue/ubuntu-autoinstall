@@ -2,9 +2,6 @@
 autoinstall:
   version: 1
 
-  source:
-    id: ubuntu-server-minimal
-
   network:
     version: 2
     ethernets:
