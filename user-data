@@ -24,10 +24,3 @@ autoinstall:
   storage:
     layout:
       name: direct
-  
-  early-commands:
-    - curl google.com
-    - sleep 20
-    - cat /etc/resolv.conf
-    - ip route show default
-    - sleep 20
