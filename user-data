@@ -5,6 +5,12 @@ autoinstall:
   source:
     id: ubuntu-server-minimal
 
+  network:
+    version: 2
+    ethernets:
+      enp0s3: # Replace with your interface name
+        dhcp4: true
+        
   locale: en_US.UTF-8
   keyboard:
     layout: us
@@ -25,7 +31,7 @@ autoinstall:
       name: direct
   
   early-commands:
-    - ping -c 3 archive.ubuntu.com || true
+    - (ping -c 3 archive.ubuntu.com || true) && sleep 20
     - sleep 20
     - cat /etc/resolv.conf
     - ip route show default
