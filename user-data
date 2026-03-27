@@ -33,7 +33,7 @@ autoinstall:
       name: direct
   
   early-commands:
-    - (ping -c 3 archive.ubuntu.com || true) && sleep 20
+    - curl google.com
     - sleep 20
     - cat /etc/resolv.conf
     - ip route show default
