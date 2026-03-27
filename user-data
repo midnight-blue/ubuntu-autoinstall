@@ -29,3 +29,4 @@ autoinstall:
     - sleep 20
     - cat /etc/resolv.conf
     - ip route show default
+    - sleep 20
