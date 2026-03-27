@@ -23,3 +23,8 @@ autoinstall:
   storage:
     layout:
       name: direct
+  
+  early-commands:
+    - ping -c 3 archive.ubuntu.com || true
+    - cat /etc/resolv.conf
+    - ip route show default
