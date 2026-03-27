@@ -1,26 +1,7 @@
 #cloud-config
 autoinstall:
   version: 1
-
-  network:
-    version: 2
-    ethernets:
-      wired: # Replace with your interface name
-        match:
-          name: e*
-        dhcp4: true
-
-  locale: en_US.UTF-8
-  keyboard:
-    layout: us
-  timezone: Europe/Rome
-
   identity:
-    username: egidio
-    hostname: linuxconfig
-    password: '$6$mzOdSSVUfhWRNhcX$mkm.drDfOLfpZRX/58ouJqMvitV2O0147VgKzKGYE6Qx4adJ8TXqMHs2dh2L7kT4TW5e97FCRDkGK1J.LouyV.'
-
-
-  storage:
-    layout:
-      name: direct
+    hostname: ubuntu-server
+    password: "$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0"
+    username: ubuntu
