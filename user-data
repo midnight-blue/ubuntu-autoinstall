@@ -8,9 +8,11 @@ autoinstall:
   network:
     version: 2
     ethernets:
-      enp0s3: # Replace with your interface name
+      wired: # Replace with your interface name
+        match:
+          name: e*
         dhcp4: true
-        
+
   locale: en_US.UTF-8
   keyboard:
     layout: us
