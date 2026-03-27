@@ -23,10 +23,6 @@ autoinstall:
     hostname: linuxconfig
     password: '$6$mzOdSSVUfhWRNhcX$mkm.drDfOLfpZRX/58ouJqMvitV2O0147VgKzKGYE6Qx4adJ8TXqMHs2dh2L7kT4TW5e97FCRDkGK1J.LouyV.'
 
-  snaps:
-    - name: pycharm-community
-      channel: stable 
-      classic: true
 
   storage:
     layout:
